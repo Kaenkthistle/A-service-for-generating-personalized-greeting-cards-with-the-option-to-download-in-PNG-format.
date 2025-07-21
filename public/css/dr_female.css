@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/caveat.ttf') format('truetype');
+}
+body {
+  width: 780px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10vh auto;
+  flex-wrap: wrap;
+}
+#card {
+  width: 100%;
+  height: 100%;
+  padding-right: 40px;
+  padding-left: 10px;
+  background: url(/images/femdr.jpg) center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: flex-start;
+}
+.fio {
+  color: #8A2BE2;
+  font-size: 3.5rem;
+  margin-left: 5px;
+  font-family: 'MyFont';
+  align-items: flex-start;
+}
+.feast_phrase {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  line-height: 1;
+  font-size: 4.5em;
+  color: #8A2BE2;
+  font-family: 'MyFont';
+}

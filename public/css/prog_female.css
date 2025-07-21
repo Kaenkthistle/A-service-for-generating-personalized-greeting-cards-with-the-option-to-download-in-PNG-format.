@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/greatvibes.ttf') format('truetype');
+}
+body {
+  width: 780px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10vh auto;
+  flex-wrap: wrap;
+}
+#card {
+    width: 100%;
+    height: 100%;
+    padding-right: 40px;
+    background: url('/images/femprog.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+.fio {
+  color: white;
+  font-size: 3.5rem;
+  margin-left: 5px;
+  font-family: 'MyFont';
+  align-items: flex-start;
+  margin-top: 300px;
+  text-shadow: #D8BFD8 2px 3px;
+}
+.feast_phrase {
+  margin-bottom: 5px;
+  margin-left: 5px;
+  line-height: 1;
+  text-shadow: #D8BFD8 2px 3px;
+  font-size: 4.2em;
+  color: white;
+  font-family: 'MyFont';
+}

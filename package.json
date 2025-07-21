@@ -1,0 +1,25 @@
+{
+  
+    "name": "helloapp",
+  
+    "version": "1.0.0",
+  
+    "dependencies": {
+  
+      
+    "ejs": "^3.1.10",
+  
+      
+    "express": "^4.21.2",
+  
+      
+    "fs": "^0.0.1-security",
+  
+      
+    "path": "^0.12.7",
+  
+      
+    "puppeteer": "^24.2.1"
+  
+    }
+}

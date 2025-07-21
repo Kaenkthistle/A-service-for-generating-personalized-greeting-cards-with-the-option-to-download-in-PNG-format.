@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/caveat.ttf') format('truetype');
+}
+body {
+  width: 780px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10vh auto;
+  flex-wrap: wrap;
+}
+#card {
+    width: 100%;
+    height: 100%;
+    background: url('/images/23f.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
+ .fio { 
+    color: #FFFF00;
+    font-size: 3.5rem;
+    margin-left: 234px;
+    font-family: 'MyFont';
+    align-items: flex-start;
+    margin-top: 100px;
+  }
+  .feast_phrase{
+    
+    margin-bottom: 10px;
+    margin-left: 300px;
+    line-height: 1;
+    font-size: 4.5em;
+    color: #FFFF00;
+    font-family: 'MyFont';
+  }

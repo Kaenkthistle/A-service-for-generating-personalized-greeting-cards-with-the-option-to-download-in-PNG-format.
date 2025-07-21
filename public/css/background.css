@@ -1,0 +1,38 @@
+html {
+    background: url('/images/i.webp');
+    background-size: cover;
+}
+html, body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+.content{
+  font-family: Arial Narrow, sans-serif;
+  padding: 20px 30px;
+  display: inline-block;
+  background-color: rgb(220, 220, 220, 0.6);
+  border-radius: 10px;
+  justify-content: center;
+}
+#card{
+  outline: rgb(220, 220, 220, 0.6) 8px solid;
+}
+button, .button {
+  background-color: LightGrey;
+  border: 1px grey solid;
+  text-decoration: none;
+  font-family: Arial Narrow, sans-serif;
+  color: black;
+  display: inline-block;
+  font-size: medium;
+  padding: 2px 4px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.niz{
+  align-self: center;
+  transform: translateY(35px);
+}

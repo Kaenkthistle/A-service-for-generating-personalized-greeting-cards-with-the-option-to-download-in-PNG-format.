@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/background.css">
+<link rel="stylesheet" href=<%= "../css/"+feast+"_"+gender+".css" %>>
+<script src="../js/card.js"></script>
+</head>
+<body>
+    <div id="card">
+        <% var phrases = {"ny": "С Новым годом!","8m": "С 8 Марта!", "23f": "С 23 Февраля!",
+                            "prog": "С Днём программиста!", "dsv": "С Днём святого Валентина!",
+                            "dr": "С днём рождения!"}; %> 
+        <p id="fio" class="fio"><%= fio %>,</p>
+        <p id="gender" style="display: none;"><%= gender %></p>
+        <p id="feast" style="display: none;"><%= feast %></p>
+        <p id="feast" class="feast_phrase"><%= phrases[feast] %></p>
+    </div>
+    <div class="niz">
+        <button id="downloadBtn" onclick="sendData()">Скачать</button>
+        <a href="/" class="button">Создать новую открытку</a>
+    </div>
+</body>
+</html>
