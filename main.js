@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const express = require("express");
 const path = require("path");
-const filename = path.join("/tmp", `/tmp/${uuidv4()}.png`);
+const filename = path.join("tmp", `${uuidv4()}.png`);
 const app = express();
 const fs = require('fs');
 app.use(express.static(path.join(__dirname, "public")));
