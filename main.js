@@ -20,7 +20,8 @@ app.post("/", urlencodedParser, function (req, res) {
 app.post("/download", (req, res) => {
     const puppeteer = require("puppeteer");
     (async () => {
-        const browser = await puppeteer.launch({headless: true, args: ["--disable-gpu", "--no-sandbox"]});
+        const browser = await puppeteer.launch({headless: true, args: ["--disable-gpu", "--no-sandbox",
+'--use-gl=egl']});
         const page = await browser.newPage();
         await page.setCacheEnabled(false);
         const arrFeasts = ["ny", "dr", "prog", "8m", "23v","dsv"];
