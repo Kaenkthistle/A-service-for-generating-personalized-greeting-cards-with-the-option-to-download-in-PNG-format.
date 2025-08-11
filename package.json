@@ -74,6 +74,6 @@
 
     },
     "scripts":{
-        "srart": "node main.js"
+        "start": "node main.js"
     }
 }
