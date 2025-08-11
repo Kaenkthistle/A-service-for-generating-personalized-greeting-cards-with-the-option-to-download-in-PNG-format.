@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
-const filename = `${uuidv4()}.png`;
+const filename = `tmp/${uuidv4()}.png`;
 const express = require("express");
 const path = require("path");
 const app = express();
