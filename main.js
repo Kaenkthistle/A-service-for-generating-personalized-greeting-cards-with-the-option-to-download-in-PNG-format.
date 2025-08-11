@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const express = require("express");
+const os = require("os");
 const path = require("path");
 const isWindows = os.platform() === 'win32';
 const tmpDir = isWindows?'tmp':'/tmp';
