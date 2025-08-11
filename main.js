@@ -1,7 +1,9 @@
 const { v4: uuidv4 } = require('uuid');
 const express = require("express");
 const path = require("path");
-const filename = path.join("tmp", `${uuidv4()}.png`);
+const isWindows = os.platform() === 'win32';
+const tmpDir = isWindows?'tmp':'/tmp';
+const filename = path.join(tmpDir, `${uuidv4()}.png`);
 const app = express();
 const fs = require('fs');
 app.use(express.static(path.join(__dirname, "public")));
