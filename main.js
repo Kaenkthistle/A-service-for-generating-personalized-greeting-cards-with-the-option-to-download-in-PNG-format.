@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require('uuid');
+const filename = `${uuidv4()}.png`;
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -18,7 +20,12 @@ app.post("/download", (req, res) => {
         const browser = await puppeteer.launch({headless: true, args: ["--disable-gpu", "--no-sandbox"]});
         const page = await browser.newPage();
         await page.setCacheEnabled(false);
-        await page.goto("http://localhost:3000", ); // Загружаем страницу\
+        const arrFeasts = ["ny", "dr", "prog", "8m", "23v","dsv"];
+        if(!req.body.fio || !req.body.gender || !req.body.feast) return res.status(400).json({success: false, message: "Заполните все необходимые поля"});
+        if(req.body.fio.length===0 || !arrFeasts.includes(req.body.feast) || !["male", "female"].includes(req.body.gender)||
+        req.body.gender==="male" && req.body.feast==="8m" || req.body.gender==="female" && req.body.feast==="23f")
+        return res.status(400).json({success: false, message: "Введите корректные значения"});
+        await page.goto(`${req.protocol}://${req.get('host')}`); // Загружаем страницу\
         await page.type('input[name="fio"]', req.body.fio, {delay: 0}); // Заполняем поле
         await page.select('select[name="gender"]', req.body.gender); // Заполняем поле
         await page.select('select[name="feast"]', req.body.feast); // Заполняем поле
@@ -26,14 +33,13 @@ app.post("/download", (req, res) => {
         await page.evaluateHandle(() => document.fonts.ready);
         await page.waitForSelector("#card"); // Ждём загрузки
         const card = await page.$("#card",{visible: true});
-        if(fs.existsSync('card.png')) fs.unlinkSync('card.png');
-        await card.screenshot({ path: "card.png"}); // Делаем скриншот
+        await card.screenshot({ path: filename}); // Делаем скриншот
         await browser.close();
-        res.json({success: true});
+        res.download(filename);
     })();
 });
 app.get("/download", (req, res) => {
-    res.download("card.png");
+    if (filename) res.download(filename, () => fs.unlink(filename, () => {}));
 });
 app.listen(3000);
 
